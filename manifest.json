@@ -1,25 +1,35 @@
 {
-	"name": "Automatad : Script Running Tool",
-	"short_name": "Automatad",
-	"version": "0.1.1",
-	"manifest_version": 2,
-	"description": "Download the plugin to run bidding information",
-	"browser_action": {
-		"default_popup": "popup.html"
-	  },
-		"permissions": [
-		"activeTab",
-		"tabs",
-		"debugger",
-		"webNavigation",
-		"http://*/*",
-		"https://*/*",
-		"notifications"
-	],
-	"content_scripts": [
-		{
-			"matches":["https://*/*"],
-		  "js": ["content.js"]
-		}
-	  ]
+  "name": "Automatad : Script Running Tool",
+  "short_name": "Automatad",
+  "version": "0.1.1",
+  "manifest_version": 2,
+  "description": "Download the plugin to run bidding information",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "debugger",
+    "webNavigation",
+    "http://*/*",
+    "https://*/*",
+    "notifications"
+  ],
+  "web_accessible_resources": [
+	"injectShow_All_Bids.js",
+	"injectYeti_Ad_Spots.js",
+	"injectGet_GPT.js",
+	"inject-script.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"]
+    }
+  ]
 }
