@@ -54,7 +54,7 @@ function Show_All_Bids(){
         console.warn(content.warn);
       }
     })();
-    window.postMessage({ type: "Show_All_Bids",content:JSON.parse(JSON.stringify(content))});
+    window.postMessage({ type: "INJECT_Show_All_Bids",content:JSON.parse(JSON.stringify(content))});
 
   }
   Show_All_Bids();

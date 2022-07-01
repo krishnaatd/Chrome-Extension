@@ -59,7 +59,7 @@ function Yeti_Ad_Spots(){
         });
       }
     }
-    window.postMessage({ type: "Yeti_Ad_Spots",content:JSON.parse(JSON.stringify(content))});
+    window.postMessage({ type: "INJECT_Yeti_Ad_Spots",content:JSON.parse(JSON.stringify(content))});
 
   };
   Yeti_Ad_Spots();

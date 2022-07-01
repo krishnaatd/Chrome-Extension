@@ -21,6 +21,6 @@ function Get_GPT(){
         console.warn(a.getResponseInformation());
         console.warn("-----");
       });
-        window.postMessage({ type: "GET_GPT", content:JSON.parse(JSON.stringify(content))});
+        window.postMessage({ type: "INJECT_GET_GPT", content:JSON.parse(JSON.stringify(content))});
   };
 Get_GPT();

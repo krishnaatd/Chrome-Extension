@@ -1,5 +1,6 @@
-window.perfWatch = {};
+window.data = {};
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    window.perfWatch[sender.tab.id] = message.content || null;
+    window.data[sender.tab.id] = message.content || null;
+    sendResponse(message.content);
 });
